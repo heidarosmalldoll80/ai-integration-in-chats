@@ -1,7 +1,7 @@
 const interactions = [];
 
 function logInteraction(userId, message) {
-    if (typeof userId !== 'string' || !message) {
+    if (typeof userId !== 'string' || typeof message !== 'string' || !message.trim()) {
         throw new Error('Invalid userId or message.');
     }
     interactions.push({ userId, message, timestamp: new Date() });
